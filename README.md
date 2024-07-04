@@ -2,6 +2,26 @@
 
 This README explains how to set up custom header validation for Ethereum addresses in a NestJS application.
 
+## Description
+
+This package provides a custom validation solution for NestJS applications that need to verify Ethereum addresses in HTTP headers. It offers a streamlined way to ensure that incoming requests contain valid Ethereum addresses in specified headers, enhancing security and data integrity in blockchain-related applications.
+
+## Problem Solved
+
+In blockchain applications, particularly those interacting with Ethereum, it's crucial to validate user addresses before processing requests. Incorrect or malformed addresses can lead to transaction errors, security vulnerabilities, or data inconsistencies. This package solves several key issues:
+
+1. **Input Validation**: It ensures that Ethereum addresses in headers conform to the correct format (0x followed by 40 hexadecimal characters), preventing processing of invalid data.
+
+2. **Type Safety**: By integrating with NestJS's dependency injection system and TypeScript, it provides type-safe access to validated header values.
+
+3. **Reusability**: The custom decorator and validators can be easily reused across different controllers and routes, promoting code consistency and reducing duplication.
+
+4. **Separation of Concerns**: It separates the validation logic from the business logic in controllers, leading to cleaner, more maintainable code.
+
+5. **Early Error Detection**: Invalid addresses are caught early in the request lifecycle, allowing for quick rejection of improper requests before they reach application logic.
+
+This solution streamlines the development process for NestJS applications dealing with Ethereum addresses, enhancing reliability and reducing the potential for errors in blockchain interactions.
+
 ## 1. Custom Header Decorator
 
 Create a file named `header-validation.decorator.ts`:
